@@ -2,11 +2,10 @@ import dotenv from "dotenv";
 import path from "path";
 import { App } from "./App";
 import { middlewares } from "./Middlewares";
-import usersRouter from "./api/users/Users.Router";
+import fileAnalyseRouter from "./api/FileAnalyse.Router";
 
 dotenv.config();
 const PORT = process.env.PORT || "8080";
-const CONNECTION_URL = process.env.CONNECTION_URL;
 const apiPath = "/api";
 const buildPath = path.join(__dirname, "..", "..", "client", "build");
 
@@ -14,15 +13,10 @@ const buildPath = path.join(__dirname, "..", "..", "client", "build");
 const app = new App(
   PORT, 
   middlewares,
-  [usersRouter],
+  [fileAnalyseRouter],
   apiPath,
   buildPath
 );
-
-// Connect to Mongo Database
-CONNECTION_URL 
-  ? app.connectMongoDB(CONNECTION_URL) 
-  : console.log("NO CONNECTION_URL FOUND");
 
 // Start
 app.listen();
