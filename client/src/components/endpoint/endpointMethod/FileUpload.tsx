@@ -17,10 +17,10 @@ const FileUpload: FunctionComponent = () => {
             <IconContext.Provider value={{ style: 
               { marginRight: '5px', verticalAlign: 'top', paddingTop: '3px' } 
             }}>
-              <label htmlFor='inputFile'><AiOutlineUpload />Choose File</label>
+              <label htmlFor='inputfield'><AiOutlineUpload />Choose File</label>
             </IconContext.Provider>
-            <input id='inputFile' type='file' name='upfile' />
-            <input id='uploadButton' type='submit' value='upload' />
+            <input id='inputfield' type='file' name='upfile' />
+            <input id='button' type='submit' value='Upload' />
           </form>
         </div>
       </div>
