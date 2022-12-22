@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledFileUpload = styled.div`
-  #inputFile {
+  #inputfield {
     opacity: 0;
     position: absolute;
     z-index: -1;
