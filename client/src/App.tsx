@@ -43,7 +43,7 @@ class App extends Component<IProps, IState> {
           <div className='main-container'>
             <div className='max-width-container'>
               <Endpoint
-                active={ false } 
+                active={ true } 
                 isDarkMode={ this.state.isDarkMode } 
                 endpointData={ endpointData }
               />
