@@ -1,9 +1,18 @@
 import React, { FunctionComponent, useState } from 'react';
 import { StyledFileUpload } from './FileUpload.styled';
-import { AiOutlineUpload } from 'react-icons/ai';
+import { AiOutlineFileAdd } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 
 const FileUpload: FunctionComponent = () => {
+
+  const [filename, setFilename] = useState('');
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    if (event.target.files != null) {
+      setFilename(event.target.files[0].name)
+    }
+  };
 
   return(
     <StyledFileUpload>
@@ -17,10 +26,15 @@ const FileUpload: FunctionComponent = () => {
             <IconContext.Provider value={{ style: 
               { marginRight: '5px', verticalAlign: 'top', paddingTop: '3px' } 
             }}>
-              <label htmlFor='inputfield'><AiOutlineUpload />Choose File</label>
+              <div className='label-container'>
+                <label className='input-label' htmlFor='inputfield'><AiOutlineFileAdd />
+                  {filename !== '' ? filename : 'Choose File...'}
+                </label>
+                <input id='inputfield' type='file' name='upfile' onChange={handleChange} />
+                <label className='submit-label' htmlFor='button'>Upload</label>
+                <input id='button' type='submit' value='Upload' />
+              </div>
             </IconContext.Provider>
-            <input id='inputfield' type='file' name='upfile' />
-            <input id='button' type='submit' value='Upload' />
           </form>
         </div>
       </div>
