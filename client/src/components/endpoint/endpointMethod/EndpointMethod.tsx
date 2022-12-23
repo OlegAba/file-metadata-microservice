@@ -3,7 +3,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { RiArrowDownSLine, RiArrowUpSLine } from 'react-icons/ri';
 import { StyledEndpointMethod } from './EndpointMethod.styled';
 import { MethodData, MethodParam, MethodCode, Method } from '../Endpoint.interface';
-import FileUpload from './FileUpload';
+import FileUpload from '../fileUpload/FileUpload';
 import { 
   atelierEstuaryDark,
   atelierForestLight 
@@ -118,7 +118,7 @@ const EndpointMethod: FunctionComponent<Props> = ({
           </div>
 
           <div>
-            <h5 className='top-border'>Request</h5>
+            <h5 className='top-border'>Demo</h5>
             <div className='accordion-section-container'>
               <div className='accordion-title-container accordion-row'>
                 <h6 className='accordion-col-left'>Params</h6>

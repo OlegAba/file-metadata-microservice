@@ -91,7 +91,7 @@ export const StyledEndpointMethod = styled.div`
     border-width: 1px;
     cursor: pointer;
     background: ${path => path.theme.colors.background};
-  }  
+  }
 
   button.open {
     border: none;
